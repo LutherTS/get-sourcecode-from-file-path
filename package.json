@@ -8,7 +8,7 @@
     "path"
   ],
   "license": "MIT",
-  "author": "Luther Tchofo Safo",
+  "author": "Luther Tchofo Safo <luther@tchofo-safo-portfolio.me>",
   "type": "module",
   "main": "index.js",
   "repository": {
