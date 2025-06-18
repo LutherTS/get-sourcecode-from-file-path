@@ -11,6 +11,10 @@
   "author": "Luther Tchofo Safo",
   "type": "module",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LutherTS/get-sourcecode-from-file-path.git"
+  },
   "dependencies": {
     "eslint": "^9.29.0",
     "typescript-eslint": "^8.34.1"
