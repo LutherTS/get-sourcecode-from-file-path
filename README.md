@@ -1,20 +1,6 @@
-import fs from "fs";
+Another utility that I am bound to reuse between open-source projects. (I'll consider making a package combining my shared utilities in due time.) Here is the code with JSDoc comments:
 
-import { Linter } from "eslint";
-import tseslint from "typescript-eslint";
-
-// ESLint configs language options
-const typeScriptAndJSXCompatible = {
-  // for compatibility with TypeScript (.ts and .tsx)
-  parser: tseslint.parser,
-  // for compatibility with JSX (React, etc.)
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
-};
-
+```js
 /**
  * Gets the ESLint-generated SourceCode object of a file from its absolute path.
  * @param {string} absolutePath The absolute path of the file.
@@ -36,3 +22,4 @@ export const getSourceCodeFromFilePath = (
 
   return code;
 };
+```

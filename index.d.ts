@@ -1,17 +1,14 @@
 // must be manually maintained
 
 /**
- * Resolves a JavaScript or TypeScript import path to a filesystem path (node_modules excluded), handling:
- * - Base url and aliases (via tsconfig.json `baseUrl` and `paths` compiler options).
- * - Missing extensions (appends `.ts`, `.tsx`, etc.).
- * - Directory imports (e.g., `./components` → `./components/index.ts`).
- * @param {string} currentDir The directory of the file performing the import, such as from `path.dirname(context.filename)`.
- * @param {string} importPath The import specifier (e.g., `@/components/Button` or `./utils`), such as one from a node being currently traversed.
- * @param {string} cwd The project root, such as from `context.cwd`.
- * @returns The absolute resolved importing path or `null` if no path is found.
+ * Gets the ESLint-generated SourceCode object of a file from its absolute path.
+ * @param {string} absolutePath The absolute path of the file.
+ * @param {import('eslint').Linter.LanguageOptions} languageOptions The languageOptions object used by `linter.verify()`, defaulting to a version that is TypeScript- and JSX-compatible.
+ * @param {import('eslint').Linter} linter The Linter instance used to retrieve the SourceCode object, defaulting to a new Linter per operation,  ensuring each instance of the function is based on its own linter (just in case somehow some linters were to run concurrently).
+ * @returns The ESLint-generated SourceCode object of the file, from which the AST (`sourceCode.ast`) and all comments (`sourceCode.getAllComments()`) can be extracted.
  */
-export const resolveImportingPath: (
-  currentDir: string,
-  importPath: string,
-  cwd: string
-) => string | null;
+export const getSourceCodeFromFilePath: (
+  absolutePath: string,
+  languageOptions?: import("eslint").Linter.LanguageOptions,
+  linter?: import("eslint").Linter
+) => SourceCode;
