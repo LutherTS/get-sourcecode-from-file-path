@@ -18,8 +18,8 @@ export const getSourceCodeFromFilePath = (
   // utilizes linter.verify ...
   linter.verify(text, { languageOptions });
   // ... to retrieve the raw code as a SourceCode object
-  const code = linter.getSourceCode();
+  const sourceCode = linter.getSourceCode();
 
-  return code;
+  return sourceCode;
 };
 ```
