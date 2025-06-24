@@ -1,5 +1,7 @@
 // must be manually maintained
 
+import { Linter, SourceCode } from "eslint";
+
 /**
  * Gets the ESLint-generated SourceCode object of a file from its absolute path.
  * @param {string} absolutePath The absolute path of the file.
