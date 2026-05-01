@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "outDir": "./out",
+    "rootDir": "./root",
+    "declaration": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "target": "ES6",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "types": ["node"]
+  },
+  "include": ["root/**/*"]
+}

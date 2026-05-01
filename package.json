@@ -10,7 +10,7 @@
   "license": "MIT",
   "author": "Luther Tchofo Safo <luther@tchofo-safo-portfolio.me>",
   "type": "module",
-  "main": "index.js",
+  "main": "out/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LutherTS/get-sourcecode-from-file-path.git"
@@ -18,5 +18,9 @@
   "dependencies": {
     "eslint": "^10.2.1",
     "typescript-eslint": "^8.59.1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "typescript": "^6.0.3"
   }
 }
