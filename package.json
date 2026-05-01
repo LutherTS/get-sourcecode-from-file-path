@@ -1,14 +1,17 @@
 {
   "name": "get-sourcecode-from-file-path",
-  "version": "1.2.0",
   "description": "Retrieves the ESLint-generated SourceCode object of a file from its absolute path.",
+  "version": "1.2.0",
+  "author": "Luther Tchofo Safo <luther@tchofo-safo-portfolio.me>",
+  "license": "MIT",
   "keywords": [
     "eslint",
     "sourcecode",
     "path"
   ],
-  "license": "MIT",
-  "author": "Luther Tchofo Safo <luther@tchofo-safo-portfolio.me>",
+  "scripts": {
+    "build": "tsc"
+  },
   "type": "module",
   "main": "out/index.js",
   "repository": {
