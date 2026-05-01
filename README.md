@@ -11,7 +11,7 @@ Another utility that I am bound to reuse between open-source projects. (I'll con
  */
 export const getSourceCodeFromFilePath = (
   absolutePath,
-  { languageOptions = typeScriptAndJSXCompatible, linter = new Linter() } = {}
+  { languageOptions = typeScriptAndJSXCompatible, linter = new Linter() } = {},
 ) => {
   // the raw code of the file at the end of the absolute path
   const text = fs.readFileSync(absolutePath, "utf8");
@@ -24,3 +24,5 @@ export const getSourceCodeFromFilePath = (
   else return sourceCode;
 };
 ```
+
+(This is the original JavaScript code of the package. In its v2, the package is now maintained in TypeScript for automated declaration files.)

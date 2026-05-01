@@ -10,10 +10,12 @@
     "path"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
   },
   "type": "module",
   "main": "out/index.js",
+  "types": "out/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LutherTS/get-sourcecode-from-file-path.git"
