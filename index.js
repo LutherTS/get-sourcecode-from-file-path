@@ -1,12 +1,12 @@
 import fs from "fs";
 
 import { Linter } from "eslint";
-import tseslint from "typescript-eslint";
+import { parser } from "typescript-eslint";
 
 // ESLint configs language options
 const typeScriptAndJSXCompatible = {
   // for compatibility with TypeScript (.ts and .tsx)
-  parser: tseslint.parser,
+  parser,
   // for compatibility with JSX (React, etc.)
   parserOptions: {
     ecmaFeatures: {
@@ -25,12 +25,12 @@ const typeScriptAndJSXCompatible = {
  */
 export const getSourceCodeFromFilePath = (
   absolutePath,
-  { languageOptions = typeScriptAndJSXCompatible, linter = new Linter() } = {}
+  { languageOptions = typeScriptAndJSXCompatible, linter = new Linter() } = {},
 ) => {
   // the raw code of the file at the end of the absolute path
-  const text = fs.readFileSync(absolutePath, "utf8");
+  const code = fs.readFileSync(absolutePath, "utf8");
   // utilizes linter.verify ...
-  linter.verify(text, { languageOptions });
+  linter.verify(code, { languageOptions });
   // ... to retrieve the raw code as a SourceCode object
   const sourceCode = linter.getSourceCode();
 
