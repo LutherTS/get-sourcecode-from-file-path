@@ -12,6 +12,8 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
+    "build:test": "npm run build && tsc -p tsconfig.tests.json",
+    "test": "npm run build:test && node --test",
     "prepublishOnly": "npm run build"
   },
   "type": "module",

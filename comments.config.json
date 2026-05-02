@@ -29,8 +29,22 @@
       },
       "returns": {
         "getSourceCodeFromFilePath": {
-          "value": "The ESLint-generated `SourceCode` object of the file, from which the AST (`sourceCode.ast`) and all comments (`sourceCode.getAllComments()`) can be extracted. `null` when encountering fatal syntax.",
+          "value": "The ESLint-generated `SourceCode` object of the file, from which the AST (`sourceCode.ast`) and all comments (`sourceCode.getAllComments()`) can be extracted. `null` when the file is nonexistent or when encountering fatal syntax.",
           "key": "JSDOC#CORE#RETURNS#GETSOURCECODEFROMFILEPATH"
+        }
+      }
+    },
+    "tests": {
+      "defs": {
+        "assertFilePath": {
+          "value": "Asserts that the file path (which exists) passed to `getSourceCodeFromFilePath` correctly returns a `SourceCode` object. The assertion process happens within this utility.",
+          "key": "JSDOC#TESTS#DEFS#ASSERTFILEPATH"
+        }
+      },
+      "params": {
+        "filePath": {
+          "value": "The file path at hand.",
+          "key": "JSDOC#TESTS#PARAMS#FILEPATH"
         }
       }
     }

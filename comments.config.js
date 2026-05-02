@@ -19,7 +19,17 @@ const data = {
       }),
       returns: Object.freeze({
         getSourceCodeFromFilePath:
-          "The ESLint-generated `SourceCode` object of the file, from which the AST (`sourceCode.ast`) and all comments (`sourceCode.getAllComments()`) can be extracted. `null` when encountering fatal syntax." /* $COMMENT#JSDOC#CORE#RETURNS#GETSOURCECODEFROMFILEPATH */,
+          "The ESLint-generated `SourceCode` object of the file, from which the AST (`sourceCode.ast`) and all comments (`sourceCode.getAllComments()`) can be extracted. `null` when the file is nonexistent or when encountering fatal syntax." /* $COMMENT#JSDOC#CORE#RETURNS#GETSOURCECODEFROMFILEPATH */,
+      }),
+    }),
+    tests: Object.freeze({
+      defs: Object.freeze({
+        assertFilePath:
+          "Asserts that the file path (which exists) passed to `getSourceCodeFromFilePath` correctly returns a `SourceCode` object. The assertion process happens within this utility." /* $COMMENT#JSDOC#TESTS#DEFS#ASSERTFILEPATH */,
+      }),
+      params: Object.freeze({
+        filePath:
+          "The file path at hand." /* $COMMENT#JSDOC#TESTS#PARAMS#FILEPATH */,
       }),
     }),
   }),

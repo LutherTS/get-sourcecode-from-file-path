@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": false,
+    "outDir": "out/test",
+    "rootDir": "root/tests"
+  },
+  "include": ["root/tests/**/*"]
+}
