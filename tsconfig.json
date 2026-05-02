@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "outDir": "./out",
-    "rootDir": "./root",
     "declaration": true,
     "module": "ESNext",
     "moduleResolution": "bundler",
@@ -9,6 +7,5 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "types": ["node"]
-  },
-  "include": ["root/**/*"]
+  }
 }

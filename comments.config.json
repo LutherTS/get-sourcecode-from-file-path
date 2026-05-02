@@ -1,9 +1,9 @@
 {
   "jsDoc": {
-    "definitions": {
+    "defs": {
       "getSourceCodeFromFilePath": {
         "value": "Gets the ESLint-generated `SourceCode` object of a file from its absolute path.",
-        "key": "JSDOC#DEFINITIONS#GETSOURCECODEFROMFILEPATH"
+        "key": "JSDOC#DEFS#GETSOURCECODEFROMFILEPATH"
       }
     },
     "params": {

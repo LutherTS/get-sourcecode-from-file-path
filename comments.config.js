@@ -1,8 +1,8 @@
 const data = {
   jsDoc: Object.freeze({
-    definitions: Object.freeze({
+    defs: Object.freeze({
       getSourceCodeFromFilePath:
-        "Gets the ESLint-generated `SourceCode` object of a file from its absolute path." /* $COMMENT#JSDOC#DEFINITIONS#GETSOURCECODEFROMFILEPATH */,
+        "Gets the ESLint-generated `SourceCode` object of a file from its absolute path." /* $COMMENT#JSDOC#DEFS#GETSOURCECODEFROMFILEPATH */,
     }),
     params: Object.freeze({
       absolutePath:

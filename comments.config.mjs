@@ -1,12 +1,12 @@
-/** @typedef {{"jsDoc":{"definitions":{"getSourceCodeFromFilePath":{"value":"Gets the ESLint-generated `SourceCode` object of a file from its absolute path.","key":"JSDOC#DEFINITIONS#GETSOURCECODEFROMFILEPATH"}},"params":{"absolutePath":{"value":"The absolute path of the file.","key":"JSDOC#PARAMS#ABSOLUTEPATH"},"options":{"value":"The additional options as follows:","key":"JSDOC#PARAMS#OPTIONS"},"linterOption":{"value":"The Linter instance used to retrieve the `SourceCode` object, defaulting to a `new Linter()` per operation, ensuring each instance of the function is based on its own linter (just in case somehow some linters were to run concurrently).","key":"JSDOC#PARAMS#LINTEROPTION"},"languageOptionsOption":{"value":"The `languageOptions` object used by `linter.verify()`, defaulting to a version that is TypeScript- and JSX-compatible.","key":"JSDOC#PARAMS#LANGUAGEOPTIONSOPTION"}},"returns":{"getSourceCodeFromFilePath":{"value":"The ESLint-generated `SourceCode` object of the file, from which the AST (`sourceCode.ast`) and all comments (`sourceCode.getAllComments()`) can be extracted. `null` when encountering fatal syntax.","key":"JSDOC#RETURNS#GETSOURCECODEFROMFILEPATH"}}}}} ResolvedConfigData */
+/** @typedef {{"jsDoc":{"defs":{"getSourceCodeFromFilePath":{"value":"Gets the ESLint-generated `SourceCode` object of a file from its absolute path.","key":"JSDOC#DEFS#GETSOURCECODEFROMFILEPATH"}},"params":{"absolutePath":{"value":"The absolute path of the file.","key":"JSDOC#PARAMS#ABSOLUTEPATH"},"options":{"value":"The additional options as follows:","key":"JSDOC#PARAMS#OPTIONS"},"linterOption":{"value":"The Linter instance used to retrieve the `SourceCode` object, defaulting to a `new Linter()` per operation, ensuring each instance of the function is based on its own linter (just in case somehow some linters were to run concurrently).","key":"JSDOC#PARAMS#LINTEROPTION"},"languageOptionsOption":{"value":"The `languageOptions` object used by `linter.verify()`, defaulting to a version that is TypeScript- and JSX-compatible.","key":"JSDOC#PARAMS#LANGUAGEOPTIONSOPTION"}},"returns":{"getSourceCodeFromFilePath":{"value":"The ESLint-generated `SourceCode` object of the file, from which the AST (`sourceCode.ast`) and all comments (`sourceCode.getAllComments()`) can be extracted. `null` when encountering fatal syntax.","key":"JSDOC#RETURNS#GETSOURCECODEFROMFILEPATH"}}}}} ResolvedConfigData */
 
 /** @type {ResolvedConfigData} */
 export const resolvedConfigData = {
   "jsDoc": {
-    "definitions": {
+    "defs": {
       "getSourceCodeFromFilePath": {
         "value": "Gets the ESLint-generated `SourceCode` object of a file from its absolute path.",
-        "key": "JSDOC#DEFINITIONS#GETSOURCECODEFROMFILEPATH"
+        "key": "JSDOC#DEFS#GETSOURCECODEFROMFILEPATH"
       }
     },
     "params": {
