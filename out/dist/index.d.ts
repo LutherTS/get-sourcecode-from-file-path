@@ -1,11 +1,11 @@
 import { Linter } from "eslint";
 /**
- * Gets the ESLint-generated `SourceCode` object of a file from its absolute path.
- * @param absolutePath - The absolute path of the file.
- * @param options - The additional options as follows:
- * @param options.linter - The Linter instance used to retrieve the `SourceCode` object, defaulting to a `new Linter()` per operation, ensuring each instance of the function is based on its own linter (just in case somehow some linters were to run concurrently).
- * @param options.languageOptions - The `languageOptions` object used by `linter.verify()`, defaulting to a version that is TypeScript- and JSX-compatible.
- * @returns The ESLint-generated `SourceCode` object of the file, from which the AST (`sourceCode.ast`) and all comments (`sourceCode.getAllComments()`) can be extracted. `null` when encountering fatal syntax.
+ * $COMMENT#JSDOC#DEFS#GETSOURCECODEFROMFILEPATH
+ * @param absolutePath - $COMMENT#JSDOC#PARAMS#ABSOLUTEPATH
+ * @param options - $COMMENT#JSDOC#PARAMS#OPTIONSPARAM
+ * @param options.linter - $COMMENT#JSDOC#PARAMS#OPTIONS#LINTER
+ * @param options.languageOptions - $COMMENT#JSDOC#PARAMS#OPTIONS#LANGUAGEOPTIONS
+ * @returns $COMMENT#JSDOC#RETURNS#GETSOURCECODEFROMFILEPATH
  */
 export declare const getSourceCodeFromFilePath: (absolutePath: string, { languageOptions, linter, }?: {
     languageOptions?: Linter.LanguageOptions | undefined;

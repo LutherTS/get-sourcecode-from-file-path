@@ -1,13 +1,13 @@
-Another utility that I am bound to reuse between open-source projects. (I'll consider making a package combining my shared utilities in due time.) Here is the code with JSDoc comments:
+A utility I reuse between open-source projects. Here is the main code with JSDoc comments:
 
 ```js
 /**
- * Gets the ESLint-generated `SourceCode` object of a file from its absolute path.
- * @param {string} absolutePath The absolute path of the file.
- * @param {Object} [options] The additional options as follows:
- * @param {import('eslint').Linter} [options.linter] The Linter instance used to retrieve the `SourceCode` object, defaulting to a `new Linter()` per operation, ensuring each instance of the function is based on its own linter (just in case somehow some linters were to run concurrently).
- * @param {import('eslint').Linter.LanguageOptions} [options.languageOptions] The `languageOptions` object used by `linter.verify()`, defaulting to a version that is TypeScript- and JSX-compatible.
- * @returns The ESLint-generated `SourceCode` object of the file, from which the AST (`sourceCode.ast`) and all comments (`sourceCode.getAllComments()`) can be extracted. `null` when encountering fatal syntax.
+ * $COMMENT#JSDOC#CORE#DEFS#GETSOURCECODEFROMFILEPATH
+ * @param {string} absolutePath $COMMENT#JSDOC#CORE#PARAMS#ABSOLUTEPATH
+ * @param {Object} [options] $COMMENT#JSDOC#CORE#PARAMS#OPTIONSPARAM
+ * @param {import('eslint').Linter} [options.linter] $COMMENT#JSDOC#CORE#PARAMS#OPTIONS#LINTER
+ * @param {import('eslint').Linter.LanguageOptions} [options.languageOptions] $COMMENT#JSDOC#CORE#PARAMS#OPTIONS#LANGUAGEOPTIONS
+ * @returns $COMMENT#JSDOC#CORE#RETURNS#GETSOURCECODEFROMFILEPATH
  */
 export const getSourceCodeFromFilePath = (
   absolutePath,
