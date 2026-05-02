@@ -24,8 +24,10 @@ const data = {
     }),
     tests: Object.freeze({
       defs: Object.freeze({
+        assertNullPath:
+          "$COMMENT#COMPOSEDVARIABLESEXCLUSIVES#ASSERTSPATHRETURNS `null` when the file is nonexistent or when encountering fatal syntax. $COMMENT#COMPOSEDVARIABLESEXCLUSIVES#ASSERTIONPROCESS" /* $COMMENT#JSDOC#TESTS#DEFS#ASSERTNULLPATH */,
         assertFilePath:
-          "Asserts that the file path (which exists) passed to `getSourceCodeFromFilePath` correctly returns a `SourceCode` object. The assertion process happens within this utility." /* $COMMENT#JSDOC#TESTS#DEFS#ASSERTFILEPATH */,
+          "$COMMENT#COMPOSEDVARIABLESEXCLUSIVES#ASSERTSPATHRETURNS a `SourceCode` object when the file exists and is valid. $COMMENT#COMPOSEDVARIABLESEXCLUSIVES#ASSERTIONPROCESS" /* $COMMENT#JSDOC#TESTS#DEFS#ASSERTFILEPATH */,
       }),
       params: Object.freeze({
         filePath:
@@ -33,13 +35,25 @@ const data = {
       }),
     }),
   }),
+  composedVariablesExclusives: Object.freeze({
+    assertsPathReturns:
+      "Asserts that the file path passed to `getSourceCodeFromFilePath` correctly returns" /* $COMMENT#COMPOSEDVARIABLESEXCLUSIVES#ASSERTSPATHRETURNS */,
+    assertionProcess:
+      "(The assertion process happens within this utility.)" /* $COMMENT#COMPOSEDVARIABLESEXCLUSIVES#ASSERTIONPROCESS */,
+  }),
 };
 
 const ignores = [];
 
+const composedVariablesExclusives = [
+  "COMPOSEDVARIABLESEXCLUSIVES#ASSERTSPATHRETURNS",
+  "COMPOSEDVARIABLESEXCLUSIVES#ASSERTIONPROCESS",
+];
+
 const config = {
   data,
   ignores,
+  composedVariablesExclusives,
 };
 
 export default config;

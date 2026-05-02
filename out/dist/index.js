@@ -18,16 +18,17 @@ const typeScriptAndJSXCompatible = {
  * @returns $COMMENT#JSDOC#CORE#RETURNS#GETSOURCECODEFROMFILEPATH
  */
 export const getSourceCodeFromFilePath = (absolutePath, { languageOptions = typeScriptAndJSXCompatible, linter = new Linter(), } = {}) => {
+    let code;
     try {
-        const code = fs.readFileSync(absolutePath, "utf8");
-        linter.verify(code, { languageOptions });
-        const sourceCode = linter.getSourceCode();
-        if (!sourceCode)
-            return null;
-        else
-            return sourceCode;
+        code = fs.readFileSync(absolutePath, "utf8");
     }
     catch (_a) {
         return null;
     }
+    linter.verify(code, { languageOptions });
+    const sourceCode = linter.getSourceCode();
+    if (!sourceCode)
+        return null;
+    else
+        return sourceCode;
 };

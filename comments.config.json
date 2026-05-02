@@ -36,8 +36,12 @@
     },
     "tests": {
       "defs": {
+        "assertNullPath": {
+          "value": "Asserts that the file path passed to `getSourceCodeFromFilePath` correctly returns `null` when the file is nonexistent or when encountering fatal syntax. (The assertion process happens within this utility.)",
+          "key": "JSDOC#TESTS#DEFS#ASSERTNULLPATH"
+        },
         "assertFilePath": {
-          "value": "Asserts that the file path (which exists) passed to `getSourceCodeFromFilePath` correctly returns a `SourceCode` object. The assertion process happens within this utility.",
+          "value": "Asserts that the file path passed to `getSourceCodeFromFilePath` correctly returns a `SourceCode` object when the file exists and is valid. (The assertion process happens within this utility.)",
           "key": "JSDOC#TESTS#DEFS#ASSERTFILEPATH"
         }
       },
@@ -47,6 +51,16 @@
           "key": "JSDOC#TESTS#PARAMS#FILEPATH"
         }
       }
+    }
+  },
+  "composedVariablesExclusives": {
+    "assertsPathReturns": {
+      "value": "Asserts that the file path passed to `getSourceCodeFromFilePath` correctly returns",
+      "key": "COMPOSEDVARIABLESEXCLUSIVES#ASSERTSPATHRETURNS"
+    },
+    "assertionProcess": {
+      "value": "(The assertion process happens within this utility.)",
+      "key": "COMPOSEDVARIABLESEXCLUSIVES#ASSERTIONPROCESS"
     }
   }
 }

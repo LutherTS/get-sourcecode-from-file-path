@@ -1,4 +1,4 @@
-/** @typedef {{"jsDoc":{"core":{"defs":{"getSourceCodeFromFilePath":{"value":"Gets the ESLint-generated `SourceCode` object of a file from its absolute path.","key":"JSDOC#CORE#DEFS#GETSOURCECODEFROMFILEPATH"}},"params":{"absolutePath":{"value":"The absolute path of the file.","key":"JSDOC#CORE#PARAMS#ABSOLUTEPATH"},"optionsParam":{"value":"The additional options as follows:","key":"JSDOC#CORE#PARAMS#OPTIONSPARAM"},"options":{"linter":{"value":"The Linter instance used to retrieve the `SourceCode` object, defaulting to a `new Linter()` per operation, ensuring each instance of the function is based on its own linter (just in case somehow some linters were to run concurrently).","key":"JSDOC#CORE#PARAMS#OPTIONS#LINTER"},"languageOptions":{"value":"The `languageOptions` object used by `linter.verify()`, defaulting to a version that is TypeScript- and JSX-compatible.","key":"JSDOC#CORE#PARAMS#OPTIONS#LANGUAGEOPTIONS"}}},"returns":{"getSourceCodeFromFilePath":{"value":"The ESLint-generated `SourceCode` object of the file, from which the AST (`sourceCode.ast`) and all comments (`sourceCode.getAllComments()`) can be extracted. `null` when the file is nonexistent or when encountering fatal syntax.","key":"JSDOC#CORE#RETURNS#GETSOURCECODEFROMFILEPATH"}}},"tests":{"defs":{"assertFilePath":{"value":"Asserts that the file path (which exists) passed to `getSourceCodeFromFilePath` correctly returns a `SourceCode` object. The assertion process happens within this utility.","key":"JSDOC#TESTS#DEFS#ASSERTFILEPATH"}},"params":{"filePath":{"value":"The file path at hand.","key":"JSDOC#TESTS#PARAMS#FILEPATH"}}}}}} ResolvedConfigData */
+/** @typedef {{"jsDoc":{"core":{"defs":{"getSourceCodeFromFilePath":{"value":"Gets the ESLint-generated `SourceCode` object of a file from its absolute path.","key":"JSDOC#CORE#DEFS#GETSOURCECODEFROMFILEPATH"}},"params":{"absolutePath":{"value":"The absolute path of the file.","key":"JSDOC#CORE#PARAMS#ABSOLUTEPATH"},"optionsParam":{"value":"The additional options as follows:","key":"JSDOC#CORE#PARAMS#OPTIONSPARAM"},"options":{"linter":{"value":"The Linter instance used to retrieve the `SourceCode` object, defaulting to a `new Linter()` per operation, ensuring each instance of the function is based on its own linter (just in case somehow some linters were to run concurrently).","key":"JSDOC#CORE#PARAMS#OPTIONS#LINTER"},"languageOptions":{"value":"The `languageOptions` object used by `linter.verify()`, defaulting to a version that is TypeScript- and JSX-compatible.","key":"JSDOC#CORE#PARAMS#OPTIONS#LANGUAGEOPTIONS"}}},"returns":{"getSourceCodeFromFilePath":{"value":"The ESLint-generated `SourceCode` object of the file, from which the AST (`sourceCode.ast`) and all comments (`sourceCode.getAllComments()`) can be extracted. `null` when the file is nonexistent or when encountering fatal syntax.","key":"JSDOC#CORE#RETURNS#GETSOURCECODEFROMFILEPATH"}}},"tests":{"defs":{"assertNullPath":{"value":"Asserts that the file path passed to `getSourceCodeFromFilePath` correctly returns `null` when the file is nonexistent or when encountering fatal syntax. (The assertion process happens within this utility.)","key":"JSDOC#TESTS#DEFS#ASSERTNULLPATH"},"assertFilePath":{"value":"Asserts that the file path passed to `getSourceCodeFromFilePath` correctly returns a `SourceCode` object when the file exists and is valid. (The assertion process happens within this utility.)","key":"JSDOC#TESTS#DEFS#ASSERTFILEPATH"}},"params":{"filePath":{"value":"The file path at hand.","key":"JSDOC#TESTS#PARAMS#FILEPATH"}}}},"composedVariablesExclusives":{"assertsPathReturns":{"value":"Asserts that the file path passed to `getSourceCodeFromFilePath` correctly returns","key":"COMPOSEDVARIABLESEXCLUSIVES#ASSERTSPATHRETURNS"},"assertionProcess":{"value":"(The assertion process happens within this utility.)","key":"COMPOSEDVARIABLESEXCLUSIVES#ASSERTIONPROCESS"}}}} ResolvedConfigData */
 
 /** @type {ResolvedConfigData} */
 export const resolvedConfigData = {
@@ -39,8 +39,12 @@ export const resolvedConfigData = {
     },
     "tests": {
       "defs": {
+        "assertNullPath": {
+          "value": "Asserts that the file path passed to `getSourceCodeFromFilePath` correctly returns `null` when the file is nonexistent or when encountering fatal syntax. (The assertion process happens within this utility.)",
+          "key": "JSDOC#TESTS#DEFS#ASSERTNULLPATH"
+        },
         "assertFilePath": {
-          "value": "Asserts that the file path (which exists) passed to `getSourceCodeFromFilePath` correctly returns a `SourceCode` object. The assertion process happens within this utility.",
+          "value": "Asserts that the file path passed to `getSourceCodeFromFilePath` correctly returns a `SourceCode` object when the file exists and is valid. (The assertion process happens within this utility.)",
           "key": "JSDOC#TESTS#DEFS#ASSERTFILEPATH"
         }
       },
@@ -50,6 +54,16 @@ export const resolvedConfigData = {
           "key": "JSDOC#TESTS#PARAMS#FILEPATH"
         }
       }
+    }
+  },
+  "composedVariablesExclusives": {
+    "assertsPathReturns": {
+      "value": "Asserts that the file path passed to `getSourceCodeFromFilePath` correctly returns",
+      "key": "COMPOSEDVARIABLESEXCLUSIVES#ASSERTSPATHRETURNS"
+    },
+    "assertionProcess": {
+      "value": "(The assertion process happens within this utility.)",
+      "key": "COMPOSEDVARIABLESEXCLUSIVES#ASSERTIONPROCESS"
     }
   }
 }

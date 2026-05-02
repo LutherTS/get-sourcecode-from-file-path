@@ -27,14 +27,17 @@ export const getSourceCodeFromFilePath = (
     linter = new Linter(),
   } = {},
 ) => {
-  try {
-    const code = fs.readFileSync(absolutePath, "utf8");
-    linter.verify(code, { languageOptions });
-    const sourceCode = linter.getSourceCode();
+  let code: string;
 
-    if (!sourceCode) return null;
-    else return sourceCode;
+  try {
+    code = fs.readFileSync(absolutePath, "utf8");
   } catch {
     return null;
   }
+
+  linter.verify(code, { languageOptions });
+  const sourceCode = linter.getSourceCode();
+
+  if (!sourceCode) return null;
+  else return sourceCode;
 };
