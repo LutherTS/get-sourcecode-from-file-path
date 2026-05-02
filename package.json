@@ -5,9 +5,10 @@
   "author": "Luther Tchofo Safo <luther@tchofo-safo-portfolio.me>",
   "license": "MIT",
   "keywords": [
-    "eslint",
     "sourcecode",
-    "path"
+    "path",
+    "eslint",
+    "ast"
   ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
@@ -16,6 +17,9 @@
   "type": "module",
   "main": "out/dist/index.js",
   "types": "out/dist/index.d.ts",
+  "files": [
+    "out/dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LutherTS/get-sourcecode-from-file-path.git"
