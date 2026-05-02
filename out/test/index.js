@@ -1,29 +1,25 @@
-import { fileURLToPath } from "url";
-import { dirname, join } from "path";
+import url from "url";
+import path from "path";
 import { describe, it } from "node:test";
 import assert from "node:assert";
 import { getSourceCodeFromFilePath } from "../../out/dist/index.js";
 const TYPESCRIPT = "TypeScript";
 const JAVASCRIPT = "JavaScript";
-const currentDirectoryPath = dirname(fileURLToPath(import.meta.url));
+const currentDirectoryPath = path.dirname(url.fileURLToPath(import.meta.url));
 const toSourceFilePath = "../../root/src/index.ts";
-const sourceFilePath = join(currentDirectoryPath, toSourceFilePath);
 const toDistributionFilePath = "../../out/dist/index.js";
-const distributionFilePath = join(currentDirectoryPath, toDistributionFilePath);
 const toFatalJsFilePath = "../../root/tests/fatal/javascript.js";
-const fatalJsFilePath = join(currentDirectoryPath, toFatalJsFilePath);
 const toFatalTsFilePath = "../../root/tests/fatal/typescript.ts";
-const fatalTsFilePath = join(currentDirectoryPath, toFatalTsFilePath);
 const languages = [
     {
         language: TYPESCRIPT,
-        filePath: sourceFilePath,
-        fatalPath: fatalJsFilePath,
+        filePath: path.join(currentDirectoryPath, toSourceFilePath),
+        fatalPath: path.join(currentDirectoryPath, toFatalJsFilePath),
     },
     {
         language: JAVASCRIPT,
-        filePath: distributionFilePath,
-        fatalPath: fatalTsFilePath,
+        filePath: path.join(currentDirectoryPath, toDistributionFilePath),
+        fatalPath: path.join(currentDirectoryPath, toFatalTsFilePath),
     },
 ];
 /**
@@ -49,7 +45,7 @@ const assertFilePath = (filePath) => {
 describe("getSourceCodeFromFilePath", () => {
     it("should return `null` for a nonexistent file", () => assertNullPath("/path/to/nonexistent/file.js"));
     for (const l of languages) {
-        it(`should return a \`null\` when given an invalid ${l.language} file`, () => assertNullPath(l.fatalPath));
+        it(`should return \`null\` when given an invalid ${l.language} file`, () => assertNullPath(l.fatalPath));
         it(`should return a \`SourceCode\` object when given a valid ${l.language} file`, () => assertFilePath(l.filePath));
     }
 });

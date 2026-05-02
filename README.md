@@ -1,4 +1,4 @@
-A utility I reuse between open-source projects. Here is the main code with JSDoc comments:
+A utility I reuse between open-source projects. Here is the main original code with JSDoc comments:
 
 ```js
 /**
@@ -25,4 +25,4 @@ export const getSourceCodeFromFilePath = (
 };
 ```
 
-(This is the original JavaScript code of the package. In its v2, the package is now maintained in TypeScript for automated declaration files.)
+(This is the main original JavaScript code of the package. In its v2, the package is now maintained in TypeScript for automated declaration files.)
