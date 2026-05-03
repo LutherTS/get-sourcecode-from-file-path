@@ -8,31 +8,35 @@ const JAVASCRIPT = "JavaScript";
 const currentDirectoryPath = path.dirname(url.fileURLToPath(import.meta.url));
 const toSourceFilePath = "../../root/src/index.ts";
 const toDistributionFilePath = "../../out/dist/index.js";
-const toFatalJsFilePath = "../../root/tests/fatal/javascript.js";
 const toFatalTsFilePath = "../../root/tests/fatal/typescript.ts";
+const toFatalJsFilePath = "../../root/tests/fatal/javascript.js";
+const toJsxTsFilePath = "../../root/tests/jsx/typescript.tsx";
+const toJsxJsFilePath = "../../root/tests/jsx/javascript.jsx";
 const languages = [
     {
         language: TYPESCRIPT,
         filePath: path.join(currentDirectoryPath, toSourceFilePath),
-        fatalPath: path.join(currentDirectoryPath, toFatalJsFilePath),
+        fatalPath: path.join(currentDirectoryPath, toFatalTsFilePath),
+        jsxPath: path.join(currentDirectoryPath, toJsxTsFilePath),
     },
     {
         language: JAVASCRIPT,
         filePath: path.join(currentDirectoryPath, toDistributionFilePath),
-        fatalPath: path.join(currentDirectoryPath, toFatalTsFilePath),
+        fatalPath: path.join(currentDirectoryPath, toFatalJsFilePath),
+        jsxPath: path.join(currentDirectoryPath, toJsxJsFilePath),
     },
 ];
 /**
- * Asserts that the file path passed to `getSourceCodeFromFilePath` correctly returns `null` when the file is nonexistent or when encountering fatal syntax. (The assertion process happens within this utility.)
- * @param filePath The file path at hand.
+ * $COMMENT#JSDOC#TESTS#DEFS#ASSERTNULLPATH
+ * @param filePath $COMMENT#JSDOC#TESTS#PARAMS#FILEPATH
  */
 const assertNullPath = (filePath) => {
     const results = getSourceCodeFromFilePath(filePath);
     assert.strictEqual(results, null);
 };
 /**
- * Asserts that the file path passed to `getSourceCodeFromFilePath` correctly returns a `SourceCode` object when the file exists and is valid. (The assertion process happens within this utility.)
- * @param filePath The file path at hand.
+ * $COMMENT#JSDOC#TESTS#DEFS#ASSERTFILEPATH
+ * @param filePath $COMMENT#JSDOC#TESTS#PARAMS#FILEPATH
  */
 const assertFilePath = (filePath) => {
     const results = getSourceCodeFromFilePath(filePath);
@@ -47,5 +51,6 @@ describe("getSourceCodeFromFilePath", () => {
     for (const l of languages) {
         it(`should return \`null\` when given an invalid ${l.language} file`, () => assertNullPath(l.fatalPath));
         it(`should return a \`SourceCode\` object when given a valid ${l.language} file`, () => assertFilePath(l.filePath));
+        it(`should return a \`SourceCode\` object when given a valid ${l.language} file with JSX`, () => assertFilePath(l.jsxPath));
     }
 });

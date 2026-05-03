@@ -13,24 +13,29 @@ const currentDirectoryPath = path.dirname(url.fileURLToPath(import.meta.url));
 
 const toSourceFilePath = "../../root/src/index.ts";
 const toDistributionFilePath = "../../out/dist/index.js";
-const toFatalJsFilePath = "../../root/tests/fatal/javascript.js";
 const toFatalTsFilePath = "../../root/tests/fatal/typescript.ts";
+const toFatalJsFilePath = "../../root/tests/fatal/javascript.js";
+const toJsxTsFilePath = "../../root/tests/jsx/typescript.tsx";
+const toJsxJsFilePath = "../../root/tests/jsx/javascript.jsx";
 
 const languages = [
   {
     language: TYPESCRIPT,
     filePath: path.join(currentDirectoryPath, toSourceFilePath),
-    fatalPath: path.join(currentDirectoryPath, toFatalJsFilePath),
+    fatalPath: path.join(currentDirectoryPath, toFatalTsFilePath),
+    jsxPath: path.join(currentDirectoryPath, toJsxTsFilePath),
   },
   {
     language: JAVASCRIPT,
     filePath: path.join(currentDirectoryPath, toDistributionFilePath),
-    fatalPath: path.join(currentDirectoryPath, toFatalTsFilePath),
+    fatalPath: path.join(currentDirectoryPath, toFatalJsFilePath),
+    jsxPath: path.join(currentDirectoryPath, toJsxJsFilePath),
   },
 ] as const satisfies {
   language: typeof TYPESCRIPT | typeof JAVASCRIPT;
   filePath: string;
   fatalPath: string;
+  jsxPath: string;
 }[];
 
 /**
@@ -66,5 +71,8 @@ describe("getSourceCodeFromFilePath", () => {
 
     it(`should return a \`SourceCode\` object when given a valid ${l.language} file`, () =>
       assertFilePath(l.filePath));
+
+    it(`should return a \`SourceCode\` object when given a valid ${l.language} file with JSX`, () =>
+      assertFilePath(l.jsxPath));
   }
 });
