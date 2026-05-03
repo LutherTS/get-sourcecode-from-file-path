@@ -23,16 +23,16 @@ const languages = [
     },
 ];
 /**
- * Asserts that the file path passed to `getSourceCodeFromFilePath` correctly returns `null` when the file is nonexistent or when encountering fatal syntax. (The assertion process happens within this utility.)
- * @param filePath The file path at hand.
+ * $COMMENT#JSDOC#TESTS#DEFS#ASSERTNULLPATH
+ * @param filePath $COMMENT#JSDOC#TESTS#PARAMS#FILEPATH
  */
 const assertNullPath = (filePath) => {
     const results = getSourceCodeFromFilePath(filePath);
     assert.strictEqual(results, null);
 };
 /**
- * Asserts that the file path passed to `getSourceCodeFromFilePath` correctly returns a `SourceCode` object when the file exists and is valid. (The assertion process happens within this utility.)
- * @param filePath The file path at hand.
+ * $COMMENT#JSDOC#TESTS#DEFS#ASSERTFILEPATH
+ * @param filePath $COMMENT#JSDOC#TESTS#PARAMS#FILEPATH
  */
 const assertFilePath = (filePath) => {
     const results = getSourceCodeFromFilePath(filePath);
