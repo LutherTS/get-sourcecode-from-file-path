@@ -1,7 +1,7 @@
 {
   "name": "get-sourcecode-from-file-path",
   "description": "Retrieves the ESLint-generated SourceCode object of a file from its absolute path.",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "author": "Luther Tchofo Safo <luther@tchofo-safo-portfolio.me>",
   "license": "MIT",
   "keywords": [
