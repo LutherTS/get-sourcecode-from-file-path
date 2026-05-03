@@ -12,7 +12,7 @@ const data = {
           "The additional options as follows:" /* $COMMENT#JSDOC#CORE#PARAMS#OPTIONSPARAM */,
         options: Object.freeze({
           linter:
-            "The Linter instance used to retrieve the `SourceCode` object, defaulting to a `new Linter()` per operation, ensuring each instance of the function is based on its own linter (just in case somehow some linters were to run concurrently)." /* $COMMENT#JSDOC#CORE#PARAMS#OPTIONS#LINTER */,
+            "The `Linter` instance used to retrieve the `SourceCode` object, defaulting to a `new Linter()` per operation ensuring each call of $COMMENT#COMPOSEDVARIABLESEXCLUSIVES#GETSOURCECODEFROMFILEPATH is based on its own linter (just in case somehow some linters were to run concurrently)." /* $COMMENT#JSDOC#CORE#PARAMS#OPTIONS#LINTER */,
           languageOptions:
             "The `languageOptions` object used by `linter.verify()`, defaulting to a version that is TypeScript- and JSX-compatible." /* $COMMENT#JSDOC#CORE#PARAMS#OPTIONS#LANGUAGEOPTIONS */,
         }),
@@ -31,23 +31,28 @@ const data = {
       }),
       params: Object.freeze({
         filePath:
-          "The file path at hand." /* $COMMENT#JSDOC#TESTS#PARAMS#FILEPATH */,
+          "The file path $COMMENT#COMPOSEDVARIABLESEXCLUSIVES#ATHAND." /* $COMMENT#JSDOC#TESTS#PARAMS#FILEPATH */,
       }),
     }),
   }),
   composedVariablesExclusives: Object.freeze({
+    getSourceCodeFromFilePath:
+      "`getSourceCodeFromFilePath`" /* $COMMENT#COMPOSEDVARIABLESEXCLUSIVES#GETSOURCECODEFROMFILEPATH */,
     assertsPathReturns:
       "Asserts that the file path passed to `getSourceCodeFromFilePath` correctly returns" /* $COMMENT#COMPOSEDVARIABLESEXCLUSIVES#ASSERTSPATHRETURNS */,
     assertionProcess:
       "(The assertion process happens within this utility.)" /* $COMMENT#COMPOSEDVARIABLESEXCLUSIVES#ASSERTIONPROCESS */,
+    atHand: "at hand" /* $COMMENT#COMPOSEDVARIABLESEXCLUSIVES#ATHAND */,
   }),
 };
 
 const ignores = [];
 
 const composedVariablesExclusives = [
+  "COMPOSEDVARIABLESEXCLUSIVES#GETSOURCECODEFROMFILEPATH",
   "COMPOSEDVARIABLESEXCLUSIVES#ASSERTSPATHRETURNS",
   "COMPOSEDVARIABLESEXCLUSIVES#ASSERTIONPROCESS",
+  "COMPOSEDVARIABLESEXCLUSIVES#ATHAND",
 ];
 
 const config = {

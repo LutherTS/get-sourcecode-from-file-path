@@ -18,7 +18,7 @@
         },
         "options": {
           "linter": {
-            "value": "The Linter instance used to retrieve the `SourceCode` object, defaulting to a `new Linter()` per operation, ensuring each instance of the function is based on its own linter (just in case somehow some linters were to run concurrently).",
+            "value": "The `Linter` instance used to retrieve the `SourceCode` object, defaulting to a `new Linter()` per operation ensuring each call of `getSourceCodeFromFilePath` is based on its own linter (just in case somehow some linters were to run concurrently).",
             "key": "JSDOC#CORE#PARAMS#OPTIONS#LINTER"
           },
           "languageOptions": {
@@ -54,6 +54,10 @@
     }
   },
   "composedVariablesExclusives": {
+    "getSourceCodeFromFilePath": {
+      "value": "`getSourceCodeFromFilePath`",
+      "key": "COMPOSEDVARIABLESEXCLUSIVES#GETSOURCECODEFROMFILEPATH"
+    },
     "assertsPathReturns": {
       "value": "Asserts that the file path passed to `getSourceCodeFromFilePath` correctly returns",
       "key": "COMPOSEDVARIABLESEXCLUSIVES#ASSERTSPATHRETURNS"
@@ -61,6 +65,10 @@
     "assertionProcess": {
       "value": "(The assertion process happens within this utility.)",
       "key": "COMPOSEDVARIABLESEXCLUSIVES#ASSERTIONPROCESS"
+    },
+    "atHand": {
+      "value": "at hand",
+      "key": "COMPOSEDVARIABLESEXCLUSIVES#ATHAND"
     }
   }
 }
